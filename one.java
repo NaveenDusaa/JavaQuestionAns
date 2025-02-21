@@ -1,27 +1,29 @@
-//Write a program to find the largest and smallest numbers in a given array.
+//Write a program to check if a number is an Armstrong number (e.g., 153 = 1^3 + 5^3 + 3^3).
 
 
-package SArrayL;
+package Armstrong;
+import java.util.*;
 
 public class one {
 	public static void main(String args[]) {
-		int arr[] ={10,50,60,5,40,100};
-		int min=arr[0];
-		int max=arr[0];
-		int size=arr.length;
-		for(int i=0;i<size;i++) {
-			if(arr[i]< min) {
-				min=arr[i];
-				
-			}
-			if(arr[i]>max) {
-				max=arr[i];
-			}
+		System.out.println("Enter number :");
+		Scanner s=new Scanner(System.in);
+		int num=s.nextInt();
+		int temp=num;
+		int rev ,sum=0;
+		while(num>0) {
+			rev=num%10;
+			num=num/10;
+			sum=sum+rev*rev*rev;
+			
 			
 		}
-		System.out.println("Smallest array:"+" " +min);
-		System.out.println("largest arrry:"+ " "+max);
+		if(temp==sum) {
+			System.out.println("it amstrong number");
+		}
+		else {
+			System.out.println("not amstrong number");
+		}
 	}
-	
-
+  
 }
